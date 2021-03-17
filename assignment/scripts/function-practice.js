@@ -61,10 +61,12 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 //    array is empty, return `undefined`.
 function getLast( array )
 {
-  let array1 = [1, 5, 10, 97, 298];
-  return array1[array1.length - 1];
+  return array[array.length - 1];
 }
-console.log('Last item of array:', getLast());
+console.log('Last item of array should be 298:', getLast([1, 5, 10, 97, 298]));
+console.log('Last item of array should be 3427:', getLast([1, 65, 7632, 3456, 21, 3, 6, 3427]));
+console.log('Last item of array should be undefined:', getLast([]));
+console.log('Last item of array:', getLast([1]));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -122,9 +124,39 @@ console.log('Sum should be 9251', sumAll([6570, 23, 45, 67, 712, 33, 45, 908, 2,
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+function givePositive(array3)
+{
+  let newArray = array3
+  for (let i = 0; i < newArray.length; i++)
+  {
+    if (newArray[i] < 0 || newArray[i] === 0)
+    {
+      delete newArray[i];
+    }
+  }
+  return newArray;
+}
+console.log('New positive Array:', givePositive([1, -7, 0, -2, 1, 6, 7]));
+
+//COME BACK TO THIS ONE --> ask in class on thursday
 
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+//The problem I selected is from edabit and it is to make a function that converts minutes into seconds, and then prints the result.
+
+function convertMin(minutes) {
+  let seconds = minutes * 60;
+  return seconds;
+}
+
+console.log('Seconds:', convertMin(1));
+console.log('Seconds:', convertMin(6));
+console.log('Seconds:', convertMin(20));
+console.log('Seconds:', convertMin(360));
+
+//That problem was pretty easy so I decided to do another.
+//This next problem is to make a function that returns the area of a triangle
