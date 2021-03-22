@@ -97,9 +97,8 @@ console.log('Find the value in the array:', find(2, [1, 5, 6, 89, 0, -7, -8]));
 function isFirstLetter(letter, string) {
   if (string[0] === letter) {
     return true;
-  } {
-    return false;
   }
+  return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
